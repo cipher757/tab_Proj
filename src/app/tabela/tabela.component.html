@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Tabela Verdade - Conjunção (E)</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>A</th>
+        <th>B</th>
+        <th>A E B</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of truthTable">
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
