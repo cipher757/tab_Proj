@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { tabelaVerdadeService } from './tabela.service';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-tabela',
   templateUrl: './tabela.component.html',
   styleUrl: './tabela.component.css'
 })
-export class TabelaComponent implements OnInit {
-  truthTable: boolean[][] = [];
+export class TabelaComponent{
+  valor1: number = 0;
+  valor2: number = 0;
+  resultadoConjuncao: string = ''; 
+  resultadoDisjuncao: string = ''; 
+  calcularConjuncao() {
+    this.resultadoConjuncao = this.valor1 && this.valor2 ? 'Verdadeiro' : 'Falso'; 
+  }
 
-  constructor(private truthTableService: tabelaVerdadeService) { }
-
-  ngOnInit(): void {
-    this.truthTable = this.truthTableService.generateTruthTable();
+  calcularDisjuncao() {
+    this.resultadoDisjuncao = this.valor1 || this.valor2 ? 'Verdadeiro' : 'Falso'; 
   }
 }
+

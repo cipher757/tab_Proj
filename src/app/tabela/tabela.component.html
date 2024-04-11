@@ -1,21 +1,60 @@
-<div class="container">
-  <h1 class="text-center mt-5 mb-4">Tabela Verdade - Conjunção (E)</h1>
-  <div class="table-responsive">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-        <tr>
-          <th class="text-center">A</th>
-          <th class="text-center">B</th>
-          <th class="text-center">A E B</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let row of truthTable">
-          <td class="text-center">{{row[0]}}</td>
-          <td class="text-center">{{row[1]}}</td>
-          <td class="text-center">{{row[2]}}</td>
-        </tr>
-      </tbody>
-    </table>
+<div class="container bg-light p-4">
+  <h2>Conjunção (E) e Disjunção de Valores</h2>
+  <div class="form-group">
+    <label for="valor1">Valor 1:</label>
+    <input type="number" class="form-control" id="valor1" [(ngModel)]="valor1">
+  </div>
+  <div class="form-group">
+    <label for="valor2">Valor 2:</label>
+    <input type="number" class="form-control" id="valor2" [(ngModel)]="valor2">
+  </div>
+  <div class="text-center mt-3">
+    <div class="d-inline-block me-2"> 
+      <button class="btn btn-success" (click)="calcularConjuncao()">Conjunção</button>
+    </div>
+    <div class="d-inline-block me-2"> 
+      <button class="btn btn-danger" (click)="calcularDisjuncao()">Disjunção</button>
+    </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col">
+      <h3>Conjunção (E)</h3>
+      <table class="table table-success table-striped">
+        <thead>
+          <tr>
+            <th>Valor 1</th>
+            <th>Valor 2</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ valor1 }}</td>
+            <td>{{ valor2 }}</td>
+            <td>{{ resultadoConjuncao }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <h3>Disjunção</h3>
+      <table class="table table-danger table-striped">
+        <thead>
+          <tr>
+            <th>Valor 1</th>
+            <th>Valor 2</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ valor1 }}</td>
+            <td>{{ valor2 }}</td>
+            <td>{{ resultadoDisjuncao }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
